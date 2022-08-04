@@ -1,0 +1,9 @@
+<title>Logout Usuario</title>
+    <div class="alert alert-primary m-5 p-4">
+        <h2>Hasta luego <span class="text-primary fw-semibold fs-3">{{user}}</span><div class="spinner-border ms-3 fs-6 fw-normal"></div></h2>
+    </div>
+<script>
+  setTimeout(() => {
+      window.location.assign("/login")
+  }, 2000);
+</script>

@@ -1,0 +1,21 @@
+<title>{{title}}</title>
+    
+
+    <div class="container mt-3 bg-light border border-3 p-3">
+        <div>
+            <h2 class="text-primary"><span class="fst-italic fw-bold border-bottom border-primary">Registro</span> de Usuario</h2>
+            <br>
+            <form action="/signup" method="post" id="formLogin" autocomplete="off">
+                <div class="form-group">
+                    <label for="username" class="fs-5 fw-semibold fst-italic">Ingrese su email</label>
+                    <input id="username" class="form-control" type="email" name="username" required>
+                    <label for="password" class="fs-5 fw-semibold fst-italic mt-4">Ingrese su contraseña</label>
+                    <input id="password" class="form-control" type="password" name="password" required>
+                </div>
+                <!-- <button class="btn btn-success mt-3" id="btnLogin">Enviar</button> -->
+                <button class="btn btn-success mt-3" id="btnLogin" type="submit">Enviar</button>
+            </form>
+            <hr>
+            <button class="btn btn-outline-warning border border-3 border-warning" onclick="window.location='/login';">Login</button>
+        </div>
+    </div>

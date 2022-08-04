@@ -1,0 +1,30 @@
+<h2 class="text-center mt-3 mb-3 text-primary">Lista de Productos <span class="text-secondary fs-4">(Music Albums)</span></h2>
+{{#if productos }}
+<section class="container">
+    <table class="table border-dark table-light table-striped">
+        <thead>
+            <tr class="table-primary fs-5">
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col" >Foto</th>
+                <th scope="col" >Stock</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            {{#each productos}}
+            <tr>
+                <th scope="row">{{ this.id }}</th>
+                <td>{{ this.nombre }}</td>
+                <td>${{ this.precio }}</td>
+                <td><img src="{{this.foto}}" width="150"></td>
+                <td>{{this.stock}}</td>
+            </tr>
+            {{/each}}
+    </table>
+</section>
+{{else}}
+<div class="container">
+    <h3 class="border border-3 border-danger text-secondary text-center p-2">No hay productos</h3>
+</div>
+{{/if }}

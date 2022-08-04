@@ -1,0 +1,240 @@
+[
+  {
+    "id": 1,
+    "author": {
+      "email": "felt@fort.com",
+      "nombre": "Ricardo",
+      "apellido": "Fort",
+      "edad": "50",
+      "alias": "El comandante",
+      "avatar": "https://www.lavoz.com.ar/resizer/RgB0hyIsoEh11jYsmxxe6GUDejo=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/3KETMFZRI5BWZLQWHV5HW27IYA.jpg",
+      "fecha": "4/7/2022, 19:55:19"
+    },
+    "text": "Maiameeeee!!!!!!",
+    "id_text": 1
+  },
+  {
+    "id": 2,
+    "author": {
+      "email": "carpincho@tigre.com",
+      "nombre": "Carpincho",
+      "apellido": "Capibara",
+      "edad": "10",
+      "alias": "TerrorDelNordelta",
+      "avatar": "https://yerbamateargentina.org.ar/imagenes/archivos/noticias/79288_imagen_1227x747xrecortarxagrandar.jpg?random=1608575522",
+      "fecha": "4/7/2022, 19:41:19"
+    },
+    "text": "Vó que tajaí!",
+    "id_text": 2
+  },
+  {
+    "id": 3,
+    "author": {
+      "email": "mate@amargo.ar",
+      "nombre": "Estancia",
+      "apellido": "Las marias",
+      "edad": "80",
+      "alias": "Rosamonte",
+      "avatar": "https://media.ambito.com/p/e0c57058744b1dd04f3cd5bb6c907d09/adjuntos/239/imagenes/039/792/0039792172/730x0/smart/mate1jpg.jpg",
+      "fecha": "4/7/2022, 19:43:25"
+    },
+    "text": "Programar sin mate es como programar sin café",
+    "id_text": 3
+  },
+  {
+    "id": 4,
+    "author": {
+      "email": "test@esto.com",
+      "nombre": "Eduardo",
+      "apellido": "Odriozola",
+      "edad": "35",
+      "alias": "Reinhardt",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "4/7/2022, 19:45:38"
+    },
+    "text": "buenas!!",
+    "id_text": 4
+  },
+  {
+    "id": 5,
+    "author": {
+      "email": "asdasd@adasd.com",
+      "nombre": "asdas",
+      "apellido": "222",
+      "edad": "22",
+      "alias": "asdasd",
+      "avatar": "https://static.wikia.nocookie.net/skydoms/images/3/31/Fighter_0209.jpg",
+      "fecha": "4/7/2022, 19:09:00"
+    },
+    "text": "asdasd",
+    "id_text": 5
+  },
+  {
+    "id": 6,
+    "author": {
+      "email": "asdasd@adasd.com",
+      "nombre": "asdas",
+      "apellido": "222",
+      "edad": "22",
+      "alias": "asdasd",
+      "avatar": "https://static.wikia.nocookie.net/skydoms/images/3/31/Fighter_0209.jpg",
+      "fecha": "4/7/2022, 19:12:17"
+    },
+    "text": "asdad",
+    "id_text": 6
+  },
+  {
+    "id": 7,
+    "author": {
+      "email": "test@this.com",
+      "nombre": "Eduardo",
+      "apellido": "Odri",
+      "edad": "35",
+      "alias": "Reinhardt",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "4/7/2022, 20:07:20"
+    },
+    "text": "Básicamente, mientras mas se repiten autores, MAS se reduce el lenght",
+    "id_text": 7
+  },
+  {
+    "id": 8,
+    "author": {
+      "email": "test@this.com",
+      "nombre": "Eduardo",
+      "apellido": "Odri",
+      "edad": "35",
+      "alias": "Reinhardt",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "4/7/2022, 20:07:54"
+    },
+    "text": "Pq sinó hasta dá más",
+    "id_text": 8
+  },
+  {
+    "id": 9,
+    "author": {
+      "email": "dolar@hoy.com",
+      "nombre": "Benjamin",
+      "apellido": "Franklin",
+      "edad": "84",
+      "alias": "AltoGuiso",
+      "avatar": "https://cdn.elnacional.com/wp-content/uploads/2020/09/dolar-1.jpg",
+      "fecha": "4/7/2022, 20:11:26"
+    },
+    "text": "230?",
+    "id_text": 9
+  },
+  {
+    "id": 10,
+    "author": {
+      "email": "dolar@hoy.com",
+      "nombre": "Benjamin",
+      "apellido": "Franklin",
+      "edad": "84",
+      "alias": "AltoGuiso",
+      "avatar": "https://cdn.elnacional.com/wp-content/uploads/2020/09/dolar-1.jpg",
+      "fecha": "4/7/2022, 20:11:38"
+    },
+    "text": "240 decis?",
+    "id_text": 10
+  },
+  {
+    "id": 11,
+    "author": {
+      "email": "dolar@hoy.com",
+      "nombre": "Benjamin",
+      "apellido": "Franklin",
+      "edad": "84",
+      "alias": "AltoGuiso",
+      "avatar": "https://cdn.elnacional.com/wp-content/uploads/2020/09/dolar-1.jpg",
+      "fecha": "4/7/2022, 20:12:04"
+    },
+    "text": "me fuí a casi 280 eh",
+    "id_text": 11
+  },
+  {
+    "id": 12,
+    "author": {
+      "email": "dolar@hoy.com",
+      "nombre": "Benjamin",
+      "apellido": "Franklin",
+      "edad": "84",
+      "alias": "AltoGuiso",
+      "avatar": "https://cdn.elnacional.com/wp-content/uploads/2020/09/dolar-1.jpg",
+      "fecha": "4/7/2022, 20:12:32"
+    },
+    "text": "ahora 20.12 a $260",
+    "id_text": 12
+  },
+  {
+    "id": 13,
+    "author": {
+      "email": "dolar@hoy.com",
+      "nombre": "Benjamin",
+      "apellido": "Franklin",
+      "edad": "84",
+      "alias": "AltoGuiso",
+      "avatar": "https://cdn.elnacional.com/wp-content/uploads/2020/09/dolar-1.jpg",
+      "fecha": "4/7/2022, 20:13:09"
+    },
+    "text": "Y eso que el domingo a la madrugada el $Bit estaba 289",
+    "id_text": 13
+  },
+  {
+    "id": 14,
+    "author": {
+      "email": "test@this.com",
+      "nombre": "Eduardo",
+      "apellido": "Odriozola",
+      "edad": "35",
+      "alias": "Reinhardt",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "4/7/2022, 20:16:31"
+    },
+    "text": "En la diapo son como 45 mensajes!",
+    "id_text": 14
+  },
+  {
+    "id": 15,
+    "author": {
+      "email": "asd@asdf.com",
+      "nombre": "Eduardo",
+      "apellido": "Odriozola",
+      "edad": "33",
+      "alias": "asdasdasdasdasdas",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "10/7/2022, 20:04:26"
+    },
+    "text": "asdasd",
+    "id_text": 15
+  },
+  {
+    "id": 16,
+    "author": {
+      "email": "asd@asdf.com",
+      "nombre": "Eduardo",
+      "apellido": "Odriozola",
+      "edad": "23",
+      "alias": "asdasdasdasdasdas",
+      "avatar": "https://pm1.narvii.com/6246/c5e30f0de9d0138046bb8c80fe0c353283fc9de1_hq.jpg",
+      "fecha": "10/7/2022, 20:28:56"
+    },
+    "text": "sdad",
+    "id_text": 16
+  },
+  {
+    "id": 17,
+    "author": {
+      "email": "asd@asdf.com",
+      "nombre": "Eduardo",
+      "apellido": "Odriozola",
+      "edad": "22",
+      "alias": "21312",
+      "avatar": "https://yerbamateargentina.org.ar/imagenes/archivos/noticias/79288_imagen_1227x747xrecortarxagrandar.jpg?random=1608575522",
+      "fecha": "23/7/2022, 18:20:30"
+    },
+    "text": "asdasd",
+    "id_text": 17
+  }
+]
