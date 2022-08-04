@@ -3,7 +3,7 @@ import yargs from 'yargs';
 const yargArgs = yargs(process.argv.slice(2)).default({
     puerto: Number(process.env.PORT) || 8080,
     debug: false,
-    modo: 'FORK',
+    modo: process.env.MODO || 'FORK',
     pid: process.pid,
 }).alias({
     p: "puerto",
