@@ -106,9 +106,10 @@ app.use((req, res) => {
     });
 });
 
-
-const PORT = yargArgs.puerto || process.env.PORT;
-const MODO = yargArgs.modo || process.env.MODO;
+// const PORT = yargArgs.puerto || process.env.PORT;
+// const MODO = yargArgs.modo || process.env.MODO;
+const PORT = process.env.PORT || yargArgs.puerto;
+const MODO = process.env.MODO || yargArgs.modo;
 const nroCPUs = os.cpus().length;
 
 if(MODO === "CLUSTER" && cluster.isPrimary) {
@@ -116,6 +117,9 @@ if(MODO === "CLUSTER" && cluster.isPrimary) {
     for(let i = 0; i < nroCPUs; i++) {
         cluster.fork();
     }
+    cluster.on('online', (worker) => {
+        console.log(`Worker ${worker.process.pid} is alive!`);
+    });
     cluster.on("exit", (worker) => {
         console.log(`worker ${worker.process.pid} died`);
     });
