@@ -122,16 +122,16 @@ if (MODO == 'CLUSTER') {
             cluster.fork()
         }
 		console.log(`Primary PID: ${process.pid} - PORT: ${PORT} - MODO: ${MODO} - isPrimary: ${cluster.isPrimary} - Number of CPUs: ${nroCPUs}\n`);
-		cluster.on("online", (worker) => { console.log(`Worker ${worker.process.pid} is alive!`);});
+		cluster.on("online", (worker) => { console.log(`Worker PID: ${worker.process.pid} is alive!`);});
     	cluster.on("exit", (worker) => { console.log(`Worker ${worker.process.pid} died`);});
     } else {
-        httpServer.listen(PORT, () => { console.log(`Escuchando en el puerto ${httpServer.address().port} - MODO: ${MODO} - Worker: ${cluster.worker.id} - PID: ${process.pid}`);});
+        httpServer.listen(PORT, () => { console.log(`Escuchando en el Puerto: ${httpServer.address().port} - MODO: ${MODO} - Worker: ${cluster.worker.id} - Wk_PID: ${cluster.worker.process.pid}`);});
         httpServer.on("error", (error) => console.error("Error de conexión", error));
     }
 };
 if (MODO == 'FORK'){
 	httpServer.listen(PORT, () => {
-		console.log(`Escuchando en el puerto ${httpServer.address().port} - MODO: ${MODO} - PID: ${process.pid}`);
+		console.log(`Escuchando en el Puerto: ${httpServer.address().port} - MODO: ${MODO} - PID: ${process.pid}`);
 	});
 	httpServer.on("error", (error) => console.error(error, "Error de conexión"));
 };
