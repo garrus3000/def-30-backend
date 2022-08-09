@@ -1,5 +1,118 @@
 # Clase 30 - Desafio: PROXY y NGINX
 
+## Resumen:
+1) Probar comandos por distintos CLI con distintos formatos de entrada.
+2) Usar Linux o MAC 🙃
+3) ``Aplicación testeada y verificada con WSL (terminal virtual de Ubuntu)``
+4) Con WSl todos los ``EJEMPLOS``, el Desafio, sea cual fuera la libreria, funciona correctamente 😎
+
+<br>
+
+-----
+
+### Crasheo o comportamientos extraños
+1) Problemas en Windows con pm2 en modo cluster
+*   ``pm2 start server.js -i max`` 
+    * Abre varias ventanas de CMD, muestra fallos con pm2 log, caida de servidores
+
+<br>
+
+2) Problemas en Windows con forever en modo cluster
+*   ``PORT=8081 MODO=CLUSTER forever start server.js --watch`` 
+    * Abre varias ventanas de CMD, muestra fallos con forever log, caida de servidores
+
+<br>
+
+-------
+## Observaciones, consejos y soluciones
+
+Distintas terminales pueden dar distintos problemas al pasar argumentos
+
+Puede ser que el argumento/parámetro en process.argv[0] sea tomado como script
+
+Puede que una libreria tenga de base, que el argv[1] sea con un formato, ej: "--port < puerto> " de manera INMUTABLE
+
+Puede ser falta de un "--", necesidad de varias o intercalamiento de los mismo junto con los argumentos de entrada
+
+Como problemas mas profundos como el "core" del sistema operativo:
+*   Que por el punto anterior genera incompatibilidades entre "absolute path", "relative path" y "URL"
+*   Tratando algunas URL (pueden ser librerias o argumentos en el CLI) como rutas relativas, siendo que son absolutas
+
+En dichos casos probar los comandos en las sguientes opciones de CLI:
+1) Powershell
+2) CMD
+3) Git Bash
+
+*   En Windows PROBLEMAS con ``express`` con el uso de librerias como ``forever`` y ``pm2`` en los argumentos por CLI:
+````
+0|Serv2Clu |     at importModuleDynamicallyWrapper (node:internal/vm/module:437:21)
+0|Serv2Clu |     at importModuleDynamically (node:vm:381:46)
+0|Serv2Clu |     at importModuleDynamicallyCallback (node:internal/process/esm_loader:35:14)
+0|Serv2Clu | You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+0|Serv2Clu | Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only URLs with a scheme in: file, data are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
+````
+
+Si los problemas persisten, usar WSL, terminal virtual de Ubuntu en win10/win11 basado en Linux
+### Instalación
+1) Buscar WSL en Windows 🔎
+
+    <br>
+
+2) Caso de no tenerlo ir a la ``"Microsoft Store"`` y descargar ``"Ubuntu Canonical Group Limited"``
+    * O ver documentación: https://docs.microsoft.com/en-us/windows/wsl/
+
+        <br>
+
+1) Recomiendo instalar ``"Remote - WSL"`` como extension del VSC
+
+    <br>
+
+4) Instalar ``Node.js v16.x`` para Ubuntu desde la terminal WSL:
+    ````
+    # Using Ubuntu
+    curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    # Using Debian, as root
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+    apt-get install -y nodejs
+    ````
+    * Documentación: https://github.com/nodesource/distributions#debinstall
+
+    <br>
+
+5) Probar el funcionamiento de la aplicación desde WSL:
+    ````
+    node server.js
+    ````
+
+6) En caso de errores desinstalar y reinstalar cualquier libreria que genere problemas en Ubuntu desde WSL, como "bcrypt"
+    *   Ya que npm instala algunas librerias con un path distinto segun el sistema operativo
+
+    ````
+    node:internal/modules/cjs/loader:1189
+    return process.dlopen(module, path.toNamespacedPath(filename));
+                    ^
+
+    Error: /mnt/d/< - lista de rutas/carpetas -  >/Desafio-30/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node: invalid ELF header
+        at Object.Module._extensions..node (node:internal/modules/cjs/loader:1189:18)
+        at Module.load (node:internal/modules/cjs/loader:981:32)
+        at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+        at Module.require (node:internal/modules/cjs/loader:1005:19)
+        at require (node:internal/modules/cjs/helpers:102:18)
+    ````
+
+    <br>
+
+7) Probar el funcionamiento de la aplicación desde WSL:
+    ````
+    node server.js
+    ````
+8) Listo 	👍. Proceder con los pasos del desafío😃  🚀
+
+---------
+
+
 ## Consigna 1
 1 - En la vista de ruta "/info", agregado número de procesadores presentes en el servidor y puerto en escucha
 
@@ -83,6 +196,9 @@ PORT=8081 MODO=CLUSTER npm run watch
     * ``Detener proceso específico por forever``
 
 
+### - ADVERTENCIA -
+````forever en Windows tiene problemas para leer argumentos por CLI````
+
 ## Ejemplos
 
 ``forever server.js --watch``
@@ -133,29 +249,55 @@ forever list
 * pm2 flush < "app_name" | namespace | id | 'all' | json_conf>
     * ``Borrar logs de pm2 ``
 
+### - ADVERTENCIA -
+````pm2 en Windows tiene problemas para leer argumentos por CLI````
+
 ## Ejemplos
 `` pm2 server.js --watch``
 
 ````
-pm2 start server.js --name="Serv1" --watch -- -p 8081
+PORT=8081 pm2 start server.js --name="Serv2Cluster" --watch
 ````
+   * Sin problemas, verificado con ``pm2 log``
+
 ````
 PORT=8082 pm2 start server.js --name="Serv2Cluster" -i max --watch
 ````
+
+---
+### Sintaxis alternativa:
+*   pm2 start server.js --name="Nombre del servidor" -i max --watch -- -- --p < PORT >
+---
+
+<br>
+
+````
+pm2 start server.js --name="Serv1" --watch -- -p 8081
+````
+
+````
+PORT=8082 pm2 start server.js --name="Serv2Cluster" -i max --watch
+````
+
 ````
 pm2 list
 ````
+
 ````
 pm2 log
 ````
+
 Ver `` PROCESOS y PUERTOS `` de ser necesario
+
 
 ````
 pm2 stop all
 ````
+
 ````
 pm2 delete all
 ````
+
 ````
 pm2 flush
 ````
@@ -434,6 +576,3 @@ http {
     <br>
 
 5) Usar los puntos ``5.`` , ``6.`` y ``7.`` del Ejemplo anterior ``PARTE 1``
-
------
-## Observaciones
