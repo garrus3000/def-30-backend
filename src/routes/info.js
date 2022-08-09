@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import os from 'os';
 
+
 const routerInfo = Router();
 
 const info = {
@@ -15,6 +16,7 @@ const info = {
 
 
 routerInfo.get('/', (req, res) => {
+    const PORT = req.socket.localPort;
     const infoProyecto = {
         argumentos: process.argv, // "Argumentos de entrada": process.argv,
         plataforma: process.platform, // "Nombre de la plataforma": process.platform,
@@ -24,6 +26,7 @@ routerInfo.get('/', (req, res) => {
         processId: process.pid, // "Process ID": process.pid,
         directorioActualTrabajo: process.cwd(), // "Directorio actual del trabajo": process.cwd(),
         numProcesadores: os.cpus().length, // "Número de procesadores": os.cpus().length,
+        PORT: PORT,
     };
     // res.send(infoProyecto);
     // console.log(info);

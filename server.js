@@ -72,7 +72,7 @@ app.use(
 
 app.use("/api", routerProducto);
 
-app.use( routerAll );
+app.use(routerAll);
 
 app.use('/info', routerInfo);
 
@@ -93,6 +93,7 @@ ioServer.on("connection", async (socket) => {
 			);
 	});
 });
+
 
 // Ataja los errores de passport
 app.use((error, req, res, next) => {
