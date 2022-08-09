@@ -1,10 +1,15 @@
 # Clase 30 - Desafio: PROXY y NGINX
 
 ## Resumen:
-1) Probar comandos por distintos CLI con distintos formatos de entrada.
-2) Usar Linux o MAC 🙃
-3) ``Aplicación testeada y verificada con WSL (terminal virtual de Ubuntu)``
-4) Con WSl todos los ``EJEMPLOS``, el Desafio, sea cual fuera la libreria, funciona correctamente 😎
+1) Instalar dependencias:
+    * npm i
+    * npm i nodemon -g
+    * npm i forever -g
+    * npm i pm2 -g
+2) Probar comandos por distintos CLI con distintos formatos de entrada.
+3) Usar Linux o MAC 🙃
+4) ``Aplicación testeada y verificada con WSL (terminal virtual de Ubuntu)``
+5) Con WSl todos los ``EJEMPLOS``, el Desafio, sea cual fuera la libreria, funciona correctamente 😎
 
 <br>
 
