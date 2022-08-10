@@ -176,10 +176,20 @@ PORT=8081 MODO=CLUSTER npm start
 ## Ejemplos
 ``nodemon server.js``
 ````
-nodemon server.js -- -p 3000 -m CLUSTER
+nodemon server.js -p 3000
+````
+````
+nodemon server.js -- -p 3001 -m CLUSTER
 ````
 
 ``npm run watch``
+````
+npm run watch -- -p 8081
+````
+````
+npm run watch -- -p 8081 -m CLUSTER
+````
+*    Alternativo :
 ````
 PORT=8081 MODO=CLUSTER npm run watch
 ````
@@ -358,14 +368,32 @@ pm2 flush
 *  4 - El resto de las consultas son redirigidas al servidor en modo FORK
 
 ## Ejemplo
-1) Ejecutar servidor modo FORK
+Con ``nodemon``
+1) Ejecutar servidor modo FORK - puerto 8080
+
+````
+npm run watch -- -p 8000
+````
+2) Ejecutar servidor modo CLUSTER - puerto 8081 
+
+````
+npm run watch -- -p 8001 -m CLUSTER
+````
+------
+
+Con ``pm2``
+1) Ejecutar servidor modo FORK - puerto 8080
+
 ````
 pm2 start server.js --name="FORK" --watch
 ````
-2) Ejecutar servidor modo CLUSTER
+2) Ejecutar servidor modo CLUSTER - puerto 8081
 ````
 PORT=8081 pm2 start server.js --name="CLUSTER" -i max --watch
 ````
+
+<br>
+
 3) Configurar Nginx para redirigir todas la consultas de "/api/randmons" al servidor en modo CLUSTER:
     *   Usando el puerto 80.   
 
@@ -437,6 +465,14 @@ http {
 
     <br>
 
+### Con ``nodemon``
+6) Detener los servidores iniciados: 
+    * Presionar ``ctrl + c`` en cada CLI donde se inicio el servidor
+
+
+
+### Con ``pm2``
+
 6) Detener y borrar los servidores iniciados
 
     ````
@@ -463,10 +499,11 @@ http {
 
 
 ## Ejemplo
+Según elección de ``nodemon`` o ``pm2``:
 1) Usar el punto ``1.`` del Ejemplo anterior ``PARTE 1``
 
 2) Usar el punto ``2.`` del Ejemplo anterior ``PARTE 1``
-    *   Cambiando los parámetros de: nombre por ``pm2``, modo por ``pm2`` y puerto segun corresponda
+    *   Cambiando los parámetros de ``pm2``: nombre, modo y puerto segun corresponda
 
     <br>
     
